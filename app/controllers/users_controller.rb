@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   	if @user.save
   		# Send email
-      UserMailer.signup_confirmation(@user).deliver_now
+  		UserMailer.signup_confirmation(@user).deliver_later(wait: 10.seconds)
   		redirect_to @user, notice: "Signed up Successfully."
   	else
   		render :new
