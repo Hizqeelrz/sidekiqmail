@@ -1,3 +1,5 @@
-    bundle exec sidekiq --environment development -C config/sidekiq.yml
-    redis-server
+Send mail via Sidekiq:
+
+    bundle exec sidekiq --environment development -C config/sidekiq.yml  
+    redis-server  
     rails s
